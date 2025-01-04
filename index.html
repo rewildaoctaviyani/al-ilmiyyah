@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Kitab Al-Ilmiyyah</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4677ac;
+            color: white;
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            width: 100px; /* Atur ukuran logo */
+            height: auto; /* Menjaga proporsi logo */
+            margin-right: 10px; /* Jarak antara logo dan nama */
+        }
+        .search-bar input {
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+        .search-bar button {
+            border-radius: 20px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-img-top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 0.9em;
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        .carousel-item img {
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .category-link {
+            cursor: pointer;
+        }
+        .category-link:hover {
+            text-decoration: underline;
+        }
+        .badge-info {
+            background-color: #406b98;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images1.jpeg" alt="Logo Toko">
+                Toko Kitab Al-Ilmiyyah
+            </a>
+            <div class="search-bar d-flex">
+                <input type="text" id="search-input" placeholder="Cari buku..." class="form-control">
+                <button type="button" class="btn btn-light" id="search-button">Cari</button>
+            </div>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#home">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#categories">Kategori</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#bestseller-books">Buku Terlaris</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#discount-books">Buku Diskon</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#catalog">Katalog Buku</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="search-results" class="my-4"></div>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <!-- Featured Books Carousel -->
+        <div id="home" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class ="carousel-item active">
+                    <img src="awal1.jfif" class="d-block w-100" alt="Featured Book 1">
+                    <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="awal2.jfif" class="d-block w-100" alt="Featured Book 2">
+                    <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#home" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#home" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Categories Section -->
+        <h3 id="categories" class="my-4">Pilih Kategori Buku</h3>
+        <div class="d-flex flex-wrap justify-content-start mb-4">
+            <span class="badge badge-pill badge-info category-link">Matan Renggang</span>
+            <span class="badge badge-pill badge-info category-link ml-2">Kitab Murah Kurasan</span>
+            <span class="badge badge-pill badge-info category-link ml-2">Dar Fath Yordan</span>
+            <span class="badge badge-pill badge-info category-link ml-2">Dar al Minhaj</span>
+            <span class="badge badge-pill badge-info category-link ml-2">Darul Faiha SIRIA</span>
+
+        </div>
+
+        <!-- Bestseller Books Section -->
+        <h3 id="bestseller-books" class="text-center my-4">Buku Terlaris</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr1.webp" class="card-img-top" alt="Buku Terlaris1">
+                    <div class="card-body">
+                        <h5 class="card-title">MATAN RENGGANG WASHIYATUL MUSTHOFA</h5>
+                        <p class="card-text">Harga: Rp 4.200</p>
+                        <a href="https://shopee.co.id/KITAB-MATAN-RENGGANG-WASHIYATUL-MUSTHOFA-ABDUL-WAHHAB-AS-SYA'RONI-wasoyah-WASIYATUL-WASIYAH-AL-MUSTOFA-MUSHTOFA-DENGAN-HARAKAT-SMB-i.278461006.24314224859" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr2.webp" class="card-img-top" alt="Buku Terlaris 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Syarah Ibnu Aqil ALFIYAH IBN MALIK Muassasah Ar Risalah qodil</h5> 
+                        <p class="card-text">Harga: Rp 245.000</p>
+                        <a href="https://shopee.co.id/Kitab-Syarah-Ibnu-Aqil-ALFIYAH-IBN-MALIK-Muassasah-Ar-Risalah-qodil-qudot-2-jilid-Beirut-dan-Dki-i.278461006.8120090443" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr3.webp" class="card-img-top" alt="Buku Terlaris 3">
+                    <div class="card-body">
+                        <h5 class="card-title">MATAN SULLAM MUNAWARROQ</h5>
+                        <p class="card-text">Harga: Rp 2.160</p>
+                        <a href="https://shopee.co.id/Matan-Sullam-Munawarroq-Soft-cover-Dri-i.278461006.25307484816" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr4.webp" class="card-img-top" alt="Buku Terlaris 4">
+                    <div class="card-body">
+                        <h5 class="card-title">MATAN SAFINAH SAFINATUN NAJAH</h5>
+                        <p class="card-text">Harga: Rp 2.550</p>
+                        <a href="https://shopee.co.id/Matan-Safinah-renggang-Matan-Safinatun-Najah-Safinatun-Naja-M-K-SMB-i.278461006.25614235043" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr5.webp" class="card-img-top" alt="Buku Terlaris 5">
+                    <div class="card-body">
+                        <h5 class="card-title">LATHOIFUL ISYAROT</h5>
+                        <p class="card-text">Harga: Rp 9.500</p>
+                        <a href="https://shopee.co.id/Kitab-Syarah-Lathoiful-isyarot-Latoif-Isyarot-Lathoif-Isyarat-Latoif-Isyaroh-%D9%84%D8%B7%D8%A7%D8%A6%D9%81-%D8%A7%D9%84%D8%A5%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA-Sc-Murah-i.278461006.25520251962" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr6.webp" class="card-img-top" alt="Buku Terlaris 6">
+                    <div class="card-body">
+                        <h5 class="card-title">SYARAH TIJAN DURORY</h5>
+                        <p class="card-text">Harga: Rp 5.000</p>
+                        <a href="https://shopee.co.id/Kitab-Syarah-Tijan-Dorury-%D8%B4%D8%B1%D8%AD-%D8%AA%D9%8A%D8%AC%D8%A7%D9%86-%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B1%D9%8A-Sc-Murah-i.278461006.24420247517?sp_atk=12d9e707-5409-41ad-ac66-423867a27cfc&xptdk=12d9e707-5409-41ad-ac66-423867a27cfc" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr7.webp" class="card-img-top" alt="Buku Terlaris 7">
+                    <div class="card-body">
+                        <h5 class="card-title">KASYIFATUS SAJA</h5>
+                        <p class="card-text">Harga: Rp 15.500</p>
+                        <a href="https://shopee.co.id/Kitab-Syarah-Kasyifatus-Saja-Safinatun-Najah-Sc-Murah-i.278461006.25020247273" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="tr8.webp" class="card-img-top" alt="Buku Terlaris 8">
+                    <div class="card-body">
+                        <h5 class="card-title">HASYIAH SYOBAN</h5>
+                        <p class="card-text">Harga: Rp 469.000</p>
+                        <a href="https://shopee.co.id/HASYIAH-SHOBAN-Hasiyah-soban-sobban-Syarah-Asymuni-4Jilid-Dki-Beirut-kertas-Kuning-DKI-BEIRUT-LEBANON-i.278461006.5863300271?sp_atk=80ddb48b-1d24-4493-93a4-38188aa208cd&xptdk=80ddb48b-1d24-4493-93a4-38188aa208cd" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 id="discount-books" class="text-center my-4">Kitab Diskon</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds1.webp" class="card-img-top" alt="Buku Diskon 1">
+                    <div class="card-body">
+                        <h5 class=" card-title">Mizan Al I'tidal Fi Naqd Ar Rijal</h5>
+                        <p class="card-text"><del>Rp 600.000</del> <span class="text-success">Rp 486.000</span></p>
+                        <a href="https://shopee.co.id/Kitab-Mizan-Al-I'tidal-Fi-Naqd-Ar-Rijal-%D9%85%D9%8A%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D8%AF%D8%A7%D9%84-%D9%81%D9%8A-%D9%86%D9%82%D8%AF-%D8%A7%D9%84%D8%B1%D8%AC%D8%A7%D9%84-%D9%85%D8%AC%D9%84%D8%AF-%D9%88%D8%A7%D8%AD%D8%AF-MUASSASAH-RISALAH-i.278461006.21471138124" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds2.webp" class="card-img-top" alt="Buku Diskon 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Syarh Al Muqaddimah Al Hadhramiyyah Busyra Al Karim</h5>
+                        <p class="card-text"><del>Rp 280.000</del> <span class="text-success">Rp 226.800</span></p>
+                        <a href="https://shopee.co.id/Kitab-Syarh-Al-Muqaddimah-Al-Hadhramiyyah-Busyra-Al-Karim-%D8%B4%D8%B1%D8%AD-%D8%A7%D9%84%D9%85%D9%82%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%85%D9%8A%D8%A9-%D8%A8%D8%B4%D8%B1%D9%89-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85-%D9%81%D9%86%D9%8A-MUASSASAH-RISALAH-i.278461006.22717864836" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds3.webp" class="card-img-top" alt="Buku Diskon 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mafhumut Thobi'ah || Kitab Import Dki Beirut</h5>
+                        <p class="card-text"><del>Rp 67.150</del> <span class="text-success">Rp 63.793</span></p>
+                        <a href="https://shopee.co.id/Mafhumut-Thobi'ah-Kitab-Import-Dki-Beirut-i.278461006.20949714682" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds4.webp" class="card-img-top" alt="Buku Diskon 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Talkhishul Asas fit Tashrif || Kitab Dki Beirut</h5>
+                        <p class="card-text"><del>Rp 82.000</del> <span class="text-success">Rp 77.900</span></p>
+                        <a href="https://shopee.co.id/Talkhishul-Asas-fit-Tashrif-Kitab-Dki-Beirut-i.278461006.19949716199" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds5.webp" class="card-img-top" alt="Buku Diskon 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Ithmi'nanul Qulub Bidzikri 'Allamil Ghuyub</h5>
+                        <p class="card-text"><del>Rp 46.000</del> <span class="text-success">Rp 43.700</span></p>
+                        <a href="https://shopee.co.id/Ithmi'nanul-Qulub-Bidzikri-'Allamil-Ghuyub-Kitab-Dki-Beirut-i.278461006.15293271909" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds6.webp" class="card-img-top" alt="Buku Diskon 6">
+                    <div class="card-body">
+                        <h5 class="card-title">KITAB Ahkam Al Harb Walsilm</h5>
+                        <p class="card-text"><del>Rp 125.000</del> <span class="text-success">Rp 101.250</span></p>
+                        <a href="https://shopee.co.id/KITAB-Ahkam-Al-Harb-Walsilm-%D8%A7%D8%AD%D9%83%D8%A7%D9%85-%D8%A7%D9%84%D8%AD%D8%B1%D8%A8-%D9%88%D8%A7%D9%84%D8%B3%D9%84%D9%85-%D9%81%D9%8A-%D9%85%D8%B3%D8%A7%D8%A6%D9%84-%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%AF-%D9%88%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D9%87%D8%AF%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A%D8%A9-MUASSASAH-RISALAH-i.278461006.22418136557?sp_atk=b16fa1b7-35e4-4d89-aea2-ef5267c9fcf5&xptdk=b16fa1b7-35e4-4d89-aea2-ef5267c9fcf5" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds7.webp" class="card-img-top" alt="Buku Diskon 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Kitab Ata'aiyus Al Insani Watasamuh Aldini</h5>
+                        <p class="card-text"><del>Rp 155.000</del> <span class="text-success">Rp 125.550</span></p>
+                        <a href="https://shopee.co.id/Kitab-Ata'aiyus-Al-Insani-Watasamuh-Aldini-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%8A%D8%B4-%D8%A7%D9%84%D8%A7%D9%86%D8%B3%D8%A7%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B3%D8%A7%D9%85%D8%AD-%D8%A7%D9%84%D8%AF%D9%8A%D9%86%D9%8A-%D8%BA%D9%84%D8%A7%D9%81-MUASSASAH-RISALAH-i.278461006.18771045235?sp_atk=140957ca-4c28-46cc-9573-a7b9de747732&xptdk=140957ca-4c28-46cc-9573-a7b9de747732" class="btn btn-custom">BELI</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="ds8.webp" class="card-img-top" alt="Buku Diskon 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Fathul Mu'in fathul muin Fiqih Font Launan Ma'a Tahqiq</h5>
+                        <p class="card-text"><del>Rp 170.000</del> <span class="text-success">Rp 51.000</span></p>
+                        <a href="https://shopee.co.id/Kitab-Fathul-Mu'in-fathul-muin-Fiqih-Font-Launan-Ma'a-Tahqiq-ORI-DMI-i.278461006.25526448197?sp_atk=484c9d8b-9bf8-4878-acac-6030bf46bdbd&xptdk=484c9d8b-9bf8-4878-acac-6030bf46bdbd" class="btn btn-custom">BELI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <!-- Bestseller Books Section -->
+ <h3 id="bestseller-books" class="text-center my-4">Matan Renggang</h3>
+ <div class="row">
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr1.webp" class="card-img-top" alt="Matan Renggang 1">
+             <div class="card-body">
+                 <h5 class="card-title">KITAB MATAN TALIMUL MUTAA'LIM</h5>
+                 <p class="card-text">Harga: Rp 6.000</p>
+                 <a href="https://shopee.co.id/KITAB-MATAN-TA'LIMUL-MUTAA'LIM-KITAB-TAKLIMUL-MUTAALIM-TALIMUL-MUTAALIM-Matan-taklim-mutaallim-SMB-i.278461006.24914229727?sp_atk=1232b0ff-9b18-4ed0-95c4-60bd0467a4cd&xptdk=1232b0ff-9b18-4ed0-95c4-60bd0467a4cd" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr2.webp" class="card-img-top" alt="Matan Renggang 2">
+             <div class="card-body">
+                 <h5 class="card-title">Syarah Ibnu Aqil Layout Beirut Ala alfiyah</h5> 
+                 <p class="card-text">Harga: Rp 45.000</p>
+                 <a href="https://shopee.co.id/Syarah-Ibnu-Aqil-Layout-Beirut-Ala-alfiyah-Ibnu-Malik-Lux-Imaroh-i.278461006.24080047006" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr3.webp" class="card-img-top" alt="Matan Renggang 3">
+             <div class="card-body">
+                 <h5 class="card-title">Kitab Syarah Ibnu Aqil ALFIYAH IBN MALIK</h5>
+                 <p class="card-text">Harga: Rp 245.000</p>
+                 <a href="https://shopee.co.id/Kitab-Syarah-Ibnu-Aqil-ALFIYAH-IBN-MALIK-Muassasah-Ar-Risalah-qodil-qudot-2-jilid-Beirut-dan-Dki-i.278461006.8120090443" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr4.webp" class="card-img-top" alt="Matan Renggang 4">
+             <div class="card-body">
+                 <h5 class="card-title">MATAN RENGGANG RIYADUL BADIAH</h5>
+                 <p class="card-text">Harga: Rp 7.500</p>
+                 <a href="https://shopee.co.id/KITAB-MATAN-RENGGANG-RIYADUL-BADIAH-BookPapers-Premium-kuning-KITAB-AL-RIYADHUL-RIYADUL-AL-BADIAH-SYEKH-NAWAWI-AL-BANTANI-SMB-i.278461006.24614229560" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+ </div>
+ <div class="row">
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr5.webp" class="card-img-top" alt="Matan Renggang 5">
+             <div class="card-body">
+                 <h5 class="card-title">MATAN RENGGANG SULLAMUT TAUFIQ</h5>
+                 <p class="card-text">Harga: Rp 4.500</p>
+                 <a href="https://shopee.co.id/KITAB-MATAN-RENGGANG-SULLAMUT-TAUFIQ-SULLAM-TAUFIQ-ABDULLAH-BIN-HUSAIN-BIN-TOHIR-SULLAM-SULAM-TAUFIK-SULAM-TAUFIQ-RENGGANG-HARAKAT-SMB-i.278461006.25314229625" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr6.webp" class="card-img-top" alt="Matan Renggang 6">
+             <div class="card-body">
+                 <h5 class="card-title">MATAN RENGGANG ARBAIN NAWAWI</h5>
+                 <p class="card-text">Harga: Rp 3.400</p>
+                 <a href="https://shopee.co.id/MATAN-RENGGANG-ARBAIN-NAWAWI-SMB-i.278461006.25414229984" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr7.webp" class="card-img-top" alt="Matan Renggang 7">
+             <div class="card-body">
+                 <h5 class="card-title">MATAN RENGGANG TAISIRUL KHALLAQ</h5>
+                 <p class="card-text">Harga: Rp 4.000</p>
+                 <a href="https://shopee.co.id/KITAB-MATAN-RENGGANG-TAISIRUL-KHALLAQ-FIL-ILMIL-AKHLAQ-HAFIDZ-HASAN-MAS-UDI-TAYSIRUL-TAISIRUL-KHOLAQ-HOLAQ-KHALAQ-DENGAN-HARAKAT-SMB-i.278461006.25514229840" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+     <div class="col-md-3">
+         <div class="card">
+             <img src="mr8.webp" class="card-img-top" alt="Matan Renggang 8">
+             <div class="card-body">
+                 <h5 class="card-title">MATAN RENGGANG WASHOYA AL ABA</h5>
+                 <p class="card-text">Harga: Rp 4.550</p>
+                 <a href="https://shopee.co.id/KITAB-MATAN-RENGGANG-WASHOYA-AL-ABA-LIL-ABNA-MUHAMMAD-SYAKIR-WASHAYA-AL-ABAA-LIL-ABNAA-DENGAN-HARAKAT-WASOYAH-ABA-LIL-ABNA-SMB-i.278461006.24714224525" class="btn btn-custom">BELI</a>
+             </div>
+         </div>
+     </div>
+ </div>
+        <!-- Discount Books Section -->
+     
+
+        <!-- Katalog Buku Section -->
+<h3 id="catalog" class="text-center my-4">Katalog Buku</h3>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt1.webp" class="card-img-top" alt="Buku Katalog 1">
+            <div class="card-body">
+                <h5 class="card-title">Kitab an Nahwu al Wadhih / wadih</h5>
+                <p class="card-text">Harga: Rp 109.000</p>
+                <a href="https://shopee.co.id/Kitab-an-Nahwu-al-Wadhih-wadih-(-nahwu-)-Dki-Beirut-i.278461006.8841849936" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt2.webp" class="card-img-top" alt="Buku Katalog 2">
+            <div class="card-body">
+                <h5 class="card-title">Masyariq Anwaril Qulub</h5>
+                <p class="card-text">Harga: Rp 42.750</p>
+                <a href="https://shopee.co.id/Masyariq-Anwaril-Qulub-Kitab-Dki-Beirut-i.278461006.21249707207" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt3.webp" class="card-img-top" alt="Buku Katalog 3">
+            <div class="card-body">
+                <h5 class="card-title">Kitab Ihya Ulumuddin imam al Ghozali 5 jilid</h5>
+                <p class="card-text">Harga: Rp 399.000</p>
+                <a href="https://shopee.co.id/Kitab-Ihya-Ulumuddin-imam-al-Ghozali-5-jilid-Dki-Beirut-i.278461006.7795585556" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt4.webp" class="card-img-top" alt="Buku Katalog 4">
+            <div class="card-body">
+                <h5 class="card-title">Kitab Skema Jadwal Jama Taksir Soft cover</h5>
+                <p class="card-text">Harga: Rp 3.600</p>
+                <a href="https://shopee.co.id/Kitab-Skema-Jadwal-Jama-Taksir-Soft-cover-Dri-i.278461006.24108567755" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt5.webp" class="card-img-top" alt="Buku Katalog 5">
+            <div class="card-body">
+                <h5 class="card-title">Kitab Manhaju at thulab منهج الطلاب في فقه الإمام الشافعي</h5>
+                <p class="card-text">Harga: Rp 64.000</p>
+                <a href="https://shopee.co.id/Kitab-Manhaju-at-thulab-%D9%85%D9%86%D9%87%D8%AC-%D8%A7%D9%84%D8%Bط%D9%84%D8%A7%D8%A8-%D9%81%D9%8A-%D9%81%D9%82%D9%87-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D8%B4%D8%A7%D9%81%D8%B9%D9%8A-(-Fiqih-)-Dki-Beirut-i.278461006.9067718942" class="btn btn-custom">BEL I</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt6.webp" class="card-img-top" alt="Buku Katalog 6">
+            <div class="card-body">
+                <h5 class="card-title">Kitab Alfiyah fi Hadist Imam Suyuthi</h5>
+                <p class="card-text">Harga: Rp 38.950</p>
+                <a href="https://shopee.co.id/Kitab-Alfiyah-fi-Hadist-Imam-Suyuthi-Alfiyah-As-Suyuti-Ilmu-Hadits-%D8%A3%D9%84%D9%81%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D9%8A%D9%88%D8%B7%D9%8A-%D9%81%D9%8A-%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB-Dki-Beirut-i.278461006.8524501069" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt7.webp" class="card-img-top" alt="Buku Katalog 7">
+            <div class="card-body">
+                <h5 class="card-title">Tuhfatul Habib Taqrib syarah Imrithi Dki Beirut</h5>
+                <p class="card-text">Harga: Rp 133.000</p>
+                <a href="https://shopee.co.id/Tuhfatul-Habib-Taqrib-syarah-Imrithi-Dki-Beirut-i.278461006.7563304442" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt8.webp" class="card-img-top" alt="Buku Katalog 8">
+            <div class="card-body">
+                <h5 class="card-title">At Tanaqudh Indal Usuliyin wal Manatiqoh</h5>
+                <p class="card-text">Harga: Rp 113.400</p>
+                <a href="https://shopee.co.id/Kitab-At-Tanaqudh-Indal-Usuliyin-wal-Manatiqoh-wal-Astruhu-Fil-Furu'-Fiqhiyyah-%D8%A7%D9%84%D8%AA%D9%86%D8%A7%D9%82%D8%B6-%D8%B9%D9%86%D8%AF-%D8%A7%D9%84%D8%A3%D8%B5%D9%88%D9%84%D9%8A%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B7%D9%82%D8%A9-%D9%88%D8%A3%D8%AB%D8%B1%D9%87-%D9%81%D9%8A-%D8%A7%D9%84%D9%81%D8%B1%D9%88%D8%B9-%D8%A7%D9%84%D9%81%D9%82%D9%87%D9%8A%D8%A9-MUASSASAH-RISALAH-i.278461006.20371044664" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt9.webp" class="card-img-top" alt="Buku Katalog 9">
+            <div class="card-body">
+                <h5 class="card-title">Ruba'iyat Sayidi Abdurohman Al Majdzub Ruba'iyat</h5>
+                <p class="card-text">Harga: Rp 28.200</p>
+                <a href="https://shopee.co.id/Kitab-Ruba'iyat-Sayidi-Abdurohman-Al-Majdzub-Ruba'iyat-Sayyidi-Abdurohman-Al-Majdzub-bairut -Dki-Beirut-i.278461006.16487216388" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt10.webp" class="card-img-top" alt="Buku Katalog 10">
+            <div class="card-body">
+                <h5 class="card-title">Mukhtashor Ihya 'Ulumuddin (Al Mursyidul Amin)</h5>
+                <p class="card-text">Harga: Rp 77.900</p>
+                <a href="https://shopee.co.id/Mukhtashor-Ihya-'Ulumuddin-(Al-Mursyidul-Amin)-(Ashfar)-Al-Ghozali-ed-DKI-BEIRUT-LEBANON-i.278461006.8582456937" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt11.webp" class="card-img-top" alt="Buku Katalog 11">
+            <div class="card-body">
+                <h5 class="card-title">al Minhajul Qowim المنهاج القويم (Fiqih)</h5>
+                <p class="card-text">Harga: Rp 88.350</p>
+                <a href="https://shopee.co.id/Kitab-al-Minhajul-Qowim-%D8%A7%D9%84%D9%85%D9%86%D9%87%D8%A7%D8%AC-%D8%A7%D9%84%D9%82%D9%88%D9%8A%D9%85-(-Fiqih-)-New-Dki-Beirut-i.278461006.8582190003" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="kt12.webp" class="card-img-top" alt="Buku Katalog 12">
+            <div class="card-body">
+                <h5 class="card-title">Kitab Nuzhatul Muttaqin - Mujalad Wahid</h5>
+                <p class="card-text">Harga: Rp 216.000</p>
+                <a href="https://shopee.co.id/Kitab-Nuzhatul-Muttaqin-Mujalad-Wahid-%D9%86%D8%B2%D9%87%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D9%82%D9%8A%D9%86-%D9%85%D8%AC%D9%84%D8%AF-%D9%88%D8%A7%D8%AD%D8%AF-MUASSASAH-RISALAH-i.278461006.22319425851" class="btn btn-custom">BELI</a>
+            </div>
+        </div>
+    </div>
+</div>
+   <!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Toko Kitab Al-Ilmiyyah</p>
+        <p><a href="#" style="color: white;">Terms & Conditions</a> | <a href="#" style="color: white;">Privacy Policy</a></p>
+        <h6>Contact Person</h6>
+        <p>Nama Kontak 1: +62 858-6313-3451 <br>
+        Email: Al_Ilmiyyah@example.com</p>
+        <h6>Alamat</h6>
+        <address>
+            Jl. Selajambe, RT.12/RW.05,Selajambe, Kec. Cisaat, Kabupaten Sukabumi,Jawa Barat 43152
+        </address>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Data buku
+    const books = [
+        { title: "MATAN RENGGANG WASHIYATUL MUSTHOFA", price: "Rp 4.200", image: "tr1.webp" },
+        { title: "AL ASYBAH WANADZOIR", price: "Rp 270.000", image: "tr2.webp" },
+        { title: "MATAN S ULLAM MUNAWARROQ", price: "Rp 2.160", image: "tr3.webp" },
+        { title: "MATAN SAFINAH SAFINATUN NAJAH", price: "Rp 2.550", image: "tr4.webp" },
+        { title: "LATHOIFUL ISYAROT", price: "Rp 6.650", image: "tr5.webp" },
+        { title: "SYARAH TIJAN DURORY", price: "Rp 3.500", image: "tr6.webp" },
+        { title: "KASIFATUS SAJA", price: "Rp 4.000", image: "tr7.webp" },
+        { title: "HASYIAH SYOBAN", price: "Rp 445.550", image: "tr8.webp" },
+        // Tambahkan buku lainnya sesuai kebutuhan
+    ];
+
+    // Fungsi untuk menangani pencarian
+    function performSearch() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const resultsContainer = document.getElementById('search-results');
+        resultsContainer.innerHTML = ''; // Kosongkan hasil sebelumnya
+
+        if (query) {
+            const results = books.filter(book => book.title.toLowerCase().includes(query));
+            if (results.length > 0) {
+                results.forEach(book => {
+                    const bookCard = `
+                        <div class="card mb-3">
+                            <img src="${book.image}" class="card-img-top" alt="${book.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${book.title}</h5>
+                                <p class="card-text">Harga: ${book.price}</p>
+                                <button class="btn btn-custom">BELI</button>
+                            </div>
+                        </div>
+                    `;
+                    resultsContainer.innerHTML += bookCard;
+                });
+            } else {
+                resultsContainer.innerHTML = '<p>Tidak ada buku yang ditemukan.</p>';
+            }
+        } else {
+            resultsContainer.innerHTML = '<p>Silakan masukkan kata kunci pencarian.</p>';
+        }
+    }
+
+    // Event listener untuk tombol "Cari"
+    document.getElementById('search-button').addEventListener('click', performSearch);
+
+    // Event listener untuk menekan tombol "Enter" di input
+    document.getElementById('search-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    });
+</script>
+</body>
+</html>
